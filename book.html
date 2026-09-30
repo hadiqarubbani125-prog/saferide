@@ -1,3 +1,40 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Book a Ride | SafeRide</title><meta name="description" content="SafeRide booking demo for Pakistan."><link rel="icon" href="logo.svg"><link rel="stylesheet" href="style.css"></head><body>
-<header><a class="brand" href="index.html"><img src="logo.svg"><span>Safe<span>Ride</span></span></a><nav><a href="index.html">Home</a><a href="how-it-works.html">How It Works</a><a href="safety.html">Safety</a><a href="drivers.html">Drivers</a><a href="contact.html">Contact</a></nav><a class="btn" href="book.html">Book a Ride</a></header>
-<main class="page"><p class="eyebrow">BOOKING DEMO</p><h1>Plan your SafeRide.</h1><div class="booking"><section class="panel"><label>Pickup<input id="pickup" placeholder="e.g. Clifton, Karachi"></label><label>Destination<input id="destination" placeholder="e.g. Saddar, Karachi"></label><label>Ride type<select id="rideType"><option value="economy">Economy</option><option value="comfort">Comfort</option><option value="xl">XL</option></select></label><button class="btn" id="estimateBtn">Estimate Fare</button><div id="estimate" class="result"></div><button class="btn danger" id="sosBtn" type="button">SOS / Emergency</button></section><section class="panel"><div class="fake-map"><span>Pakistan ride map</span><i>📍</i><i>🚗</i><i>📍</i></div><h2>Available drivers</h2><div class="driver-list"><div><b>Ali R.</b><span>⭐ 4.9 • Sedan • 4 min</span></div><div><b>Hamza K.</b><span>⭐ 4.8 • Hatchback • 6 min</span></div></div></section></div><div class="notice">Demo only: live GPS, real driver dispatch, payments and emergency integrations need a production backend and approved service providers.</div></main><footer><b>SafeRide</b><span>Book responsibly and follow local safety guidance.</span></footer><script src="script.js"></script></body></html>
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Book a Ride | SafeRide Pakistan</title>
+<meta name="description" content="Book a SafeRide using an interactive Pakistan map, route distance and fare estimate.">
+<link rel="icon" href="logo.svg"><link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+</head><body>
+<header><a class="brand" href="index.html"><img src="logo.svg" alt="SafeRide"><span>Safe<span>Ride</span></span></a><nav><a href="index.html">Home</a><a href="how-it-works.html">How It Works</a><a href="safety.html">Safety</a><a href="drivers.html">Drivers</a><a href="contact.html">Contact</a></nav><a class="btn" href="book.html">Book a Ride</a></header>
+<main class="page">
+<p class="eyebrow">BOOKING DEMO</p><h1>Plan your SafeRide.</h1>
+<p class="lead">Enter your pickup and destination. The map will show the real Pakistan road route, distance and estimated fare.</p>
+<div class="booking">
+<section class="panel">
+<label for="pickup">Pickup<input id="pickup" placeholder="e.g. Lahore, Pakistan" autocomplete="street-address"></label>
+<label for="destination">Destination<input id="destination" placeholder="e.g. Sahiwal, Pakistan" autocomplete="street-address"></label>
+<label for="rideType">Ride type<select id="rideType"><option value="economy">Economy</option><option value="comfort">Comfort</option><option value="xl">XL</option></select></label>
+<div class="map-buttons">
+<button class="btn secondary" id="myLocationBtn" type="button">📍 My Location</button>
+<button class="btn secondary" id="pickPickupBtn" type="button">📍 Pick Pickup</button>
+<button class="btn secondary" id="pickDestinationBtn" type="button">🏁 Pick Destination</button>
+</div>
+<button class="btn" id="estimateBtn" type="button">Show Route &amp; Estimate Fare</button>
+<div id="estimate" class="result">Enter two locations to calculate your route.</div>
+<button class="btn danger" id="sosBtn" type="button">SOS / Emergency</button>
+</section>
+<section class="panel map-panel">
+<div class="map-heading"><div><h2>Live Pakistan Map</h2><p id="mapStatus">Map ready — enter locations or pick points on the map.</p></div><button class="map-reset" id="resetMapBtn" type="button">Reset</button></div>
+<div id="map" aria-label="Interactive Pakistan map"></div>
+<div class="map-legend"><span><i class="dot pickup-dot"></i> Pickup</span><span><i class="dot destination-dot"></i> Destination</span><span>🛣️ Road route</span></div>
+</section>
+</div>
+<div class="notice">Map data uses OpenStreetMap. Route estimates are for this demo; production use should add a dedicated maps/routing provider and backend.</div>
+<section class="section-inline"><h2>Available drivers</h2><div class="driver-list"><div><b>Ali R.</b><span>⭐ 4.9 • Sedan • 4 min</span></div><div><b>Hamza K.</b><span>⭐ 4.8 • Hatchback • 6 min</span></div><div><b>Usman A.</b><span>⭐ 4.7 • Sedan • 8 min</span></div></div></section>
+</main>
+<footer><b>SafeRide</b><span>Book responsibly and follow local safety guidance.</span></footer>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="script.js"></script>
+</body></html>
