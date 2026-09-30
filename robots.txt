@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://hadiqarubbani125-prog.github.io/saferide/sitemap.xml
